@@ -11,8 +11,8 @@ dp = Dispatcher()
 async def cmd_start(message: types.Message):
     kb = [
         [
-            types.KeyboardButton(text="Первая кнопка"),
-            types.KeyboardButton(text="Нуммер кнопка цвай")
+            types.KeyboardButton(text="Когда за стол?"),
+            types.KeyboardButton(text="В которую пору книгохранилище двери отворяет?")
         ],
     ]
 
