@@ -34,7 +34,7 @@ async def with_puree(message: types.Message):
     await message.reply(f"За стол работает в обед, с 1:00 ПМ по 1:31 ПМ\n\n{gehen}", parse_mode="Markdown")
 
 def Uberprufung_der_aktuellen_Uhrzeit(Minimum, Maximum):
-    now = datetime.now()
+    now = datetime.now(ZoneInfo("Asia/Chita"))
     current_zeit = now.time()
     start = datetime.strptime(f"{Minimum}", "%H:%M").time()
     ende = datetime.strptime(f"{Maximum}", "%H:%M").time()
@@ -44,7 +44,7 @@ def Uberprufung_der_aktuellen_Uhrzeit(Minimum, Maximum):
         return False
 
 def Timing(Zeit):
-    now = datetime.now()
+    now = datetime.now(ZoneInfo("Asia/Chita"))
 
     zielzeit = datetime.strptime(Zeit, "%H:%M")
 
