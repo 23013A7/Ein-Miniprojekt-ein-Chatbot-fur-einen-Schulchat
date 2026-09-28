@@ -32,7 +32,7 @@ async def with_puree(message: types.Message):
         gehen = "Сейчас **нужно идти за стол**"
     else:
         gehen = "Сейчас за стол идти **не нужно**"
-    await message.reply(f"За стол работает в обед, с 1:00 ПМ по 1:31 ПМ\n\n{gehen}")
+    await message.reply(f"За стол работает в обед, с 1:00 ПМ по 1:31 ПМ\n\n{gehen}", parse_mode="Markdown")
 
 def Uberprufung_der_aktuellen_Uhrzeit(Minimum, Maximum):
     now = datetime.now()
