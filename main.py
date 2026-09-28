@@ -1,6 +1,7 @@
 import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
+from aiogram import F
 
 schlussel = ""
 
@@ -22,6 +23,11 @@ async def cmd_start(message: types.Message):
         input_field_placeholder="Текст где то"
     )
     await message.answer("Выбор", reply_markup=keyboard)
+
+# Фильтр текста работает корректно
+@dp.message(F.text.lower() == "когда за стол?")
+async def with_puree(message: types.Message):
+    await message.reply("РАБОТАЕТ")
 
 async def main():
     await dp.start_polling(bot)
